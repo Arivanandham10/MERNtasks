@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: rgb(190, 0, 79);
+    }
+    .main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(93, 0, 39);
+        color: white;
+        margin-top: 15%;
+        margin-left: 25%;
+        margin-right: 25%;
+        padding: 20px;
+        height: 450px;
+    }
+    .fields{
+        width: 200px;
+        display: inline-block;
+        margin: 15px;
+    }
+    .btn{
+        background-color: white;
+        color: black;
+        width: 100%;
+        height: 50px;
+        margin-top: 10px;
+        border-radius: 5px;
+        font-size: large;
+    }
+    .input{
+        width: 40%;
+    }
+    .lang{
+        width: 40%;
+    }
+</style>
+<body>
+    <div>
+        <div class="main">
+            <form>
+                <label class="fields">Name:</label>
+                <input class="input" type="text" placeholder="Your name" required><br>
+                <label class="fields">Email:</label>
+                <input class="input" type="email" placeholder="Your email" required><br>
+                <label class="fields">password</label>
+                <input type="password" class="input" required><br>
+                <label class="fields">Phone Number:</label>
+                <input class="input" type="number" required><br>
+                <label class="fields">Gender:</label>
+                Male<input class="inputcheck" type="checkbox">
+                Female<input class="inputcheck" type="checkbox">
+                Other<input class="inputcheck" type="checkbox"><br>
+                <label class="fields">language:</label>
+                <select class="lang" value="language" required>
+                    <option value="">choose your language</option>
+                    <option value="tamil">tamil</option>
+                    <option value="english">english</option>
+                    <option value="others">others</option>
+                </select><br>
+                <label class="fields">Zip code:</label>
+                <input class="input" type="number" required><br>
+                <label class="fields">About</label>
+                <input class="inpabt" style="height: 50px; width: 40%;" type="text" placeholder="Write about yourself..." required><br>
+                <button class="btn"><b>Register</b></button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

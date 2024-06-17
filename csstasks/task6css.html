@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+    .main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 300px;
+    }
+    .input{
+        width: 400px;
+        height: 30px;
+    }
+    .logbtn{
+        width: 410px;
+        height: 30px;
+        background-color: green;
+        color: white;
+        margin-top: 10px;
+    }
+    .cancel{
+        background-color: lightgray;
+        margin-top: 10px;
+        padding-top: 20px;
+        text-align: center;
+    }
+    .canbtn{
+        color: white;
+        background-color: red;
+        padding: 5px;
+        width: 75px;
+    }
+    a{
+        margin-left: 200px;
+    }
+</style>
+<body>
+    <div class="main">
+        <div>
+            <img src="login.jpeg">
+        </div>
+        <div>
+            <form>
+                <p>Username</p>
+                <input class="input" type="text" placeholder="Enter Username" required>
+                <P>password</P>
+                <input class="input" type="password" placeholder="Enter Password" required><br>
+                <button class="logbtn">login</button><br>
+                <input type="checkbox" style="margin-top: 10px;">Rememner me<br>
+                <div class="cancel">
+                    <button class="canbtn">cancel</button>
+                    <a href="">Forget password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table{
+        margin-left: 10%;
+        background-color: turquoise;
+        width: 1000px;
+        border-color: black;
+        border-width: 2;
+        border-style: solid;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .fields{
+        text-align: center;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .maindiv{
+        margin-top: 50px;
+    }
+    .shape1{
+        border: 2px solid green;
+        width: 100px;
+        height: 60px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    .shape2{
+        border: 2px solid green;
+        width: 100px;
+        height: 60px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+    .shape3{
+        border: 2px solid green;
+        width: 100px;
+        height: 60px;
+    }
+    .shape4{
+        border: 2px solid green;
+        border-radius: 50%;
+        width: 100px;
+        height: 60px;
+    }
+    .shape5{
+        width: 100px;
+        height: 60px;
+        border: 2px solid green;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        border-top-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    tr,td{
+        width: 30px;
+        border-color: black;
+        border-width: 2;
+        border-style: solid;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+</style>
+<body>
+    <table class="table">
+        <tr class="fields">
+            <td><b>firstname</b></td>
+            <td><b>lastname</b></td>
+            <td class="age"><b>age</b></td>
+        </tr>
+        <tr>
+            <td>jill</td>
+            <td>smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>eve</td>
+            <td>jackson</td>
+            <td>94</td>
+        </tr>
+        <tr>
+            <td>john</td>
+            <td>doe</td>
+            <td>80</td>
+        </tr>
+    </table>
+    <div class="maindiv">
+        <div class="container">
+            <div class="shape1"></div>
+            <div class="shape1"></div>
+            <div class="shape2"></div>
+            <div class="shape1"></div>
+            <div class="shape3"></div>
+            <div class="shape2"></div>
+            <div class="shape4"></div>
+            <div class="shape3"></div>
+            <div class="shape5"></div>
+        </div>
+    </div>
+</body>
+</html>
