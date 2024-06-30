@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            position: relative;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click the following buttons to handle animation</h1>
+    <div>
+        <img src="sup.png" alt="error" id="sup">
+    </div>
+    <button id="start" onclick="start()">Start</button>
+    <button id="stop" onclick="stop()">Stop</button>
+    <script>
+        var animation;
+        function init() {
+            let sup = document.getElementById("sup");
+            sup.style.position = "absolute";
+            sup.style.left = "0px";
+        }
+        window.onload = init;
+        function start() {
+            let sup = document.getElementById("sup");
+            let screenWidth = window.innerWidth;
+            let imgWidth = sup.offsetWidth;
+            let currentPosition = parseInt(sup.style.left);
+            if (currentPosition + imgWidth >= screenWidth) {
+                sup.style.left = "0px";
+            } else {
+                sup.style.left = currentPosition + 10 + "px";
+            }
+            animation = setTimeout(start, 50);
+        }
+        function stop() {
+            clearTimeout(animation);
+        }
+    </script>
+</body>
+</html>

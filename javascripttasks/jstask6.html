@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+            flex-direction: column;
+        }
+        .container{
+            background-color: rgb(231, 229, 229);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+            box-shadow: 0 4px 8px grey;
+        }
+        h2{
+            text-align: center;
+            font-family: cursive; 
+            font-size: xx-large;
+        }
+        img{
+            width: 35px;
+            height: 30px;
+            background-color: grey;
+        }
+        .ip{
+            width: 240px;
+            height: 30px;
+            border: none;
+            padding-left: 5px;
+        }
+        .formitem{
+            display: flex;
+            margin: 20px;
+        }
+        .rem{
+            margin-top: 10px;
+        }
+        button{
+            width: 100%;
+            background-color: dodgerblue;
+            border-radius: 5px;
+            border: none;
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+        }
+        .fp{
+            margin-left: 90px;
+        }
+        p{
+            margin-top: 10px; 
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div>
+                <h2>Instagram</h2>
+                <form id="form">
+                    <div class="form">
+                        <div class="formitem">
+                            <img src="per.png" alt="us">
+                            <input class="ip" id="un" type="text" placeholder="Username">
+                        </div>
+                        <div class="formitem">
+                            <img src="lck.png" alt="lk">
+                            <input class="ip" id="pwd" type="password" placeholder="Password">
+                        </div>
+                        <button type="button" onclick="login()">Log in</button>
+                        <div class="rem">
+                            <input type="checkbox">Remember me
+                            <a href="#" class="fp">Forget Password</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <p>Don't Have an account!
+            <a href="#">Sign up here</a>
+        </p>
+    </div>
+    <script>
+        const form = document.querySelector("#form")
+        const un = document.getElementById("un")
+        const pwd = document.getElementById("pwd")
+        function login(){
+            if(un.value === "" && pwd.value === ""){
+                alert("Please fill the form")
+            }else{
+                alert("Login Successful")
+                window.location.href = "https://www.instagram.com/"
+            }
+        }
+    </script>
+</body>
+</html>

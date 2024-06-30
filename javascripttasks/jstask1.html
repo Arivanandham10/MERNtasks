@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: beige;
+    }
+    button{
+        background-color: dodgerblue;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <h1>REVERSE A NUMBER</h1>
+    <p>Enter a number to reverse:</p>
+    <input type="number" id="torev" placeholder="Enter a number">
+    <button class="button" onclick="revnum()">reverse the number</button>
+    <hr>
+    <p id="revout"></p>
+    <script>
+        function revnum() {
+            let number = document.getElementById("torev");
+            let num = number.value;
+            let numStr = num.toString();
+            console.log(numStr);
+            let sptNum = numStr.split('');
+            console.log(sptNum);
+            let revSptNum = sptNum.reverse();
+            console.log(revSptNum);
+            let reversedNum = revSptNum.join('');
+            console.log(reversedNum);
+            let revout = document.getElementById("revout");
+            revout.innerHTML ="Entered number: " + num + "<br>" + "Reversed number: " + reversedNum
+        }
+    </script>
+</body>
+</html>

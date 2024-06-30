@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: beige;
+    }
+    button{
+        background-color: dodgerblue;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <h1>Rearrange the letters of the string in alphabetical order</h1>
+    <p>Enter a string:</p>
+    <input type="text" name="string" id="argstr" placeholder="enter a string">
+    <button class="btn" onclick="arrangestr()">Rearrange</button>
+    <p id="reargstr"></p>
+    <script>
+        function arrangestr(){
+            var str = document.getElementById("argstr")
+            var string = str.value;
+            console.log(string)
+            sptstr = string.split('')
+            console.log(sptstr)
+            sortstr = sptstr.sort();
+            console.log(sortstr)
+            joinstr = sortstr.join('')
+            console.log(joinstr)
+            let out = document.getElementById("reargstr")
+            out.innerHTML = "Given string : " + string + "<br>" + "Rearranged string : " + joinstr
+        }
+    </script>
+</body>
+</html>

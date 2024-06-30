@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-group {
+            margin: 10px;
+            display: flex;
+            align-items: center;
+        }
+        label {
+            width: 80px;
+            margin-right: 10px;
+        }
+        input, textarea {
+            width: 200px;
+        }
+        body{
+            background-color: beige;
+        }
+        button{
+            background-color: dodgerblue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 100px;
+        }
+        .err {
+            color: red;
+            margin-left: 10px;
+        }
+        .err-bd{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <form id="form">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <span id="name-err" class="err"></span>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <span id="email-err" class="err"></span>
+        </div>
+        <div class="form-group">
+            <label for="website">Website:</label>
+            <input type="url" id="website" name="website">
+            <span id="website-err" class="err"></span>
+        </div>
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea>
+            <span id="message-err" class="err"></span>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const errors = document.querySelectorAll('.err');
+            errors.forEach(err => err.textContent = '');
+            const errorBorders = document.querySelectorAll('.err-bd');
+            errorBorders.forEach(input => input.classList.remove('err-bd'));
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const website = document.getElementById('website').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const urlPattern = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w .-]*)*\/?$/;
+            let Error = false;
+            if (!name) {
+                document.getElementById('name-err').textContent = 'Name is required.';
+                document.getElementById('name').classList.add('err-bd');
+                Error = true;
+            }
+            if (!emailPattern.test(email)) {
+                document.getElementById('email-err').textContent = 'Valid Email id is required';
+                document.getElementById('email').classList.add('err-bd');
+                Error = true;
+            }
+            if (!urlPattern.test(website)) {
+                document.getElementById('website-err').textContent = 'Valid URL is Required';
+                document.getElementById('website').classList.add('err-bd');
+                Error = true;
+            }
+            if (!message) {
+                document.getElementById('message-err').textContent = 'Message is required';
+                document.getElementById('message').classList.add('err-bd');
+                Error = true;
+            }
+        });
+    </script>
+</body>
+</html>
